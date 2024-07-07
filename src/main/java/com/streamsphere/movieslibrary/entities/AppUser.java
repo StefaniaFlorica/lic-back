@@ -27,19 +27,12 @@ public class AppUser {
     private Long id;
 
     @Column(nullable = false, unique = true)
-    @NotEmpty
-    @Size(min = 8)
     private String username;
 
     @Column(nullable = false, unique = true)
-    @NotEmpty
-    @Email
     private String email;
 
     @Column(nullable = false)
-    @NotEmpty
-    @Size(min = 10, message = "Password must be at least 10 characters long")
-    @Pattern(regexp = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}")
     private String password;
 
     private String question;
