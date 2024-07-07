@@ -7,8 +7,8 @@ spring:
     name: movies-library
   datasource:
     username: root
-    password: rootpassword
-    url: jdbc:mysql://localhost:3306/cinesfera?useSSL=false&serverTimezone=UTC
+    password: fgrlYfRpFgxZAAfvHPBzmZQZAqzybdia
+    url: jdbc:mysql://root:fgrlYfRpFgxZAAfvHPBzmZQZAqzybdia@roundhouse.proxy.rlwy.net:49262/railway?useSSL=false&serverTimezone=UTC
   jpa:
     hibernate:
       ddl-auto: update
