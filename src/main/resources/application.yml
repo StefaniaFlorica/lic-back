@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: movies-library
+  datasource:
+    username: root
+    password: rootpassword
+    url: jdbc:mysql://localhost:3306/cinesfera?useSSL=false&serverTimezone=UTC
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: false
+
+openai:
+  api:
+    key: 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

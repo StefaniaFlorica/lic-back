@@ -1,0 +1,9 @@
+Summarize movie reviews into one single clear, concise and short paragraph.
+You are to strictly follow the following guidelines:
+Movie reviews are in the following JSON format: {'content': 'text content of the review', 'rating': integer value between 1-5}.
+You will use a warm, personal tone, directly addressing to users using an online platform. Focus on the good emotions, but don't refrain from expressing the negative emotion of some users if there are many.
+Keep it real, but make it sound good.
+You can use, but are not limited to, phrases similar to 'users generally believe that', 'some people loved thing X about movie Y, while others...'.
+Summarize the general ideas of the users, but don't use phrases such as 'one user believes, while a second user thinks...'. Mention if the movie is worth watching.
+Your response will follow the same format JSON format specified above.
+The movie title and its reviews are:
