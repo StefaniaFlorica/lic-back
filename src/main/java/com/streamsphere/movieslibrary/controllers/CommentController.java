@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/comment/")
-@CrossOrigin(origins = { "http://localhost:5173" })
+@CrossOrigin(origins = { "https://streamsphere-front.netlify.app" })
 public class CommentController {
 
     @Autowired

@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/review/")
-@CrossOrigin(origins = { "http://localhost:5173" })
+@CrossOrigin(origins = { "https://streamsphere-front.netlify.app" })
 public class ReviewController {
 
     @Autowired

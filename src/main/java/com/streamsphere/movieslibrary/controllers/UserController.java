@@ -17,7 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/user/")
-@CrossOrigin(origins = { "http://localhost:5173" })
+@CrossOrigin(origins = { "https://streamsphere-front.netlify.app" })
 public class UserController {
 
     @Autowired

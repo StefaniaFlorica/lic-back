@@ -26,7 +26,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/api/movie/")
-@CrossOrigin(origins = {"http://localhost:5173"})
+@CrossOrigin(origins = {"https://streamsphere-front.netlify.app"})
 public class MovieController {
 
     @Autowired

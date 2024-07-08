@@ -8,7 +8,7 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/api/recommendations/")
-@CrossOrigin(origins = {"http://localhost:5173"})
+@CrossOrigin(origins = {"https://streamsphere-front.netlify.app"})
 public class RecommendationController {
     private final OpenAIServiceImpl openAIServiceImpl;
 
