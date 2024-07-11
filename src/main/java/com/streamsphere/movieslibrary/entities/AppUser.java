@@ -27,12 +27,16 @@ public class AppUser {
     private Long id;
 
     @Column(nullable = false, unique = true)
+    @NotEmpty
     private String username;
 
     @Column(nullable = false, unique = true)
+    @NotEmpty
     private String email;
 
     @Column(nullable = false)
+    @NotEmpty
+    @Size(min = 8, message = "Password must be at least 8 characters long")
     private String password;
 
     private String question;

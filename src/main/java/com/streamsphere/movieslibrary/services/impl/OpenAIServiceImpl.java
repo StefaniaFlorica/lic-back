@@ -48,7 +48,7 @@ public class OpenAIServiceImpl implements OpenAIService {
 
         String systemPrompt = readPromptFromFile("recommendation_prompt.txt");
         String userPrompt = createUserPrompt(type, favMovies, nonFavMovies);
-        String requestBody = createRequestBody(systemPrompt, userPrompt);
+        String requestBody = createRequestBody(systemPrompt, userPrompt, "gpt-4o", 0.5);
 
         System.out.println("Request Body: " + requestBody);
 
@@ -121,11 +121,11 @@ public class OpenAIServiceImpl implements OpenAIService {
         return String.format("\"%s\", [%s], [%s]", type, favMoviesList, nonFavMoviesList);
     }
 
-    private String createRequestBody(String systemPrompt, String userPrompt) {
+    private String createRequestBody(String systemPrompt, String userPrompt, String model, Double temperature){
         JsonObject requestBody = new JsonObject();
-        requestBody.addProperty("model", "gpt-3.5-turbo");
+        requestBody.addProperty("model", model);
         requestBody.addProperty("max_tokens", 256);
-        requestBody.addProperty("temperature", 0.7);
+        requestBody.addProperty("temperature", temperature);
 
         JsonArray messages = new JsonArray();
 
@@ -197,7 +197,7 @@ public class OpenAIServiceImpl implements OpenAIService {
     @Override
     public Mono<String> getReviewSummary(String prompt) {
         String systemPrompt = readPromptFromFile("summarization_prompt.txt");
-        String requestBody = createRequestBody(systemPrompt, prompt);
+        String requestBody = createRequestBody(systemPrompt, prompt, "gpt-3.5-turbo", 0.7);
 
         System.out.println("Request Body: " + requestBody);
 
