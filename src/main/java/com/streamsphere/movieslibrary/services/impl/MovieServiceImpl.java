@@ -168,7 +168,7 @@ public class MovieServiceImpl implements MovieService {
     @Override
     public List<MovieResponse> getTop4ReviewedMovies() {
         List<Long> topMovieIds = reviewRepository.findTopReviewedMovies()
-                .stream().limit(4).toList();
+                .stream().limit(8).toList();
 
         return topMovieIds.stream().map(movieId -> {
             Movie movie = movieRepository.findById(movieId).orElseThrow();
@@ -191,7 +191,7 @@ public class MovieServiceImpl implements MovieService {
     public List<MovieResponse> getTopFavMovies() {
         List<Long> topMovieIds = listRepository.findTopMoviesInLists()
                 .stream()
-                .limit(4)
+                .limit(6)
                 .toList();
 
         return topMovieIds.stream().map(movieId -> {

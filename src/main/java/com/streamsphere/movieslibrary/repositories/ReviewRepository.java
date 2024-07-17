@@ -22,7 +22,8 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
 
     @Query("SELECT r FROM Review r WHERE " +
             "(:userId IS NULL OR r.user.id = :userId) AND " +
-            "(:movieId IS NULL OR r.movie.id = :movieId)")
+            "(:movieId IS NULL OR r.movie.id = :movieId) " +
+            "ORDER BY r.date DESC")
     List<Review> findByUserIdAndMovieId(@Param("userId") Long userId, @Param("movieId") Long movieId);
 
     @Query("SELECT r.movie.id FROM Review r GROUP BY r.movie.id ORDER BY COUNT(r.id) DESC")

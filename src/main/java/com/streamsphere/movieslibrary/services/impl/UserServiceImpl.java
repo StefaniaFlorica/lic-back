@@ -90,7 +90,7 @@ public class UserServiceImpl implements UserService {
     public List<UserResponse> getTop4ActiveUsers() {
         List<AppUser> topUsers = userRepository.findTop4ActiveUsers();
 
-        return topUsers.stream().limit(5).map(user -> {
+        return topUsers.stream().limit(8).map(user -> {
             UserResponse response = UserMapper.INSTANCE.entityToResponse(user);
 
             response.setNbReview(reviewRepository.countByUserId(user.getId()));
